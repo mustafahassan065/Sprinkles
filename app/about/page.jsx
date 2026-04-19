@@ -57,7 +57,7 @@ export default function AboutPage() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'72px', alignItems:'center' }}>
             <div style={{ position:'relative' }}>
               <div className="img-card" style={{ aspectRatio:'3/4', maxWidth:'400px' }}>
-                <img src={PORTRAIT} alt="Joe Davis, Owner and Lead Irrigation Specialist at Sprinklers and Lawns Dallas Fort Worth" />
+                <img src="/images/profile.jpg" alt="Joe Davis, Owner and Lead Irrigation Specialist at Sprinklers and Lawns Dallas Fort Worth" />
               </div>
               <div style={{ position:'absolute', bottom:'20px', right:'-10px', background:'var(--green)', color:'white', padding:'16px 22px', borderRadius:'var(--r-md)', boxShadow:'var(--sh-md)' }}>
                 <div style={{ fontFamily:'var(--sans)', fontSize:'11px', fontWeight:700, letterSpacing:'.1em', textTransform:'uppercase', opacity:.8, marginBottom:'4px' }}>Licensed Professional</div>
