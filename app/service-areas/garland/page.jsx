@@ -5,7 +5,7 @@ export const metadata = {
   keywords: 'irrigation services Garland TX, sprinkler repair Garland Texas, sprinkler installation Garland TX, irrigation company Garland Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/garland' },
 };
-const HERO = 'https://images.unsplash.com/photo-1625758271714-a9ea96f7f1d3?w=1600&q=85&fit=crop';
+const HERO = 'https://plus.unsplash.com/premium_photo-1661845609789-635c5e35c4ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FyZGVuJTIwaXJyaWdhdGlvbnxlbnwwfHwwfHx8MA%3D%3D';
 const IMG1 = 'https://images.unsplash.com/photo-1558618047-f4fb2b5d9b0a?w=900&q=85&fit=crop';
 const IMG2 = 'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=900&q=85&fit=crop';
 const services = [
