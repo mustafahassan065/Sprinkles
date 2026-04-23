@@ -108,7 +108,7 @@ export default function RichardsonPage() {
               <div className="divider" />
               <p style={{ color:'var(--text-muted)', marginBottom:'20px', fontSize:'17px' }}>Sprinklers and Lawns understands the specific irrigation needs of Richardson, Texas properties:</p>
               <ul className="check-list" style={{ marginBottom:'28px' }}>{highlights.map(h => <li key={h}>{h}</li>)}</ul>
-              <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>{title} neighborhoods and areas we serve:</h3>
+              <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>Richardson neighborhoods and areas we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
                 {neighborhoods.map(n => <span key={n} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500 }}>{n}</span>)}
               </div>
