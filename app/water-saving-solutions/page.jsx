@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const IMG = {
-  hero:   'https://images.unsplash.com/photo-1545259742-46674f4efa2f?w=1600&q=85&fit=crop',
+  hero:   'https://images.unsplash.com/photo-1495774539583-885e02cca8c2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhdmUlMjB3YXRlcnxlbnwwfHwwfHx8MA%3D%3D',
   split1: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=900&q=85&fit=crop',
   split2: 'https://images.unsplash.com/photo-1560015534-cee980ba7e13?w=900&q=85&fit=crop',
 };
