@@ -7,5 +7,8 @@ const nextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
+  // Required for API routes + file system on Vercel
+  // Remove this if using static export only
 };
+
 module.exports = nextConfig;

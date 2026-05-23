@@ -564,6 +564,15 @@ function RenderSection({ sec }) {
 /* ════════════════════════════════
    PAGE
 ════════════════════════════════ */
+
+/* ════════════════════════════════
+   STATIC PARAMS — required for Vercel
+   Tells Next.js which slugs to pre-build
+════════════════════════════════ */
+export async function generateStaticParams() {
+  return Object.keys(posts).map(slug => ({ slug }));
+}
+
 export default function BlogPostPage({ params }) {
   const post = posts[params.slug];
   if (!post) notFound();
