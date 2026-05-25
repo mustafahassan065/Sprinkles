@@ -9,8 +9,7 @@ const sprinklerServices = [
   { label: 'Irrigation Design',          href: '/irrigation-design' },
   { label: 'Smart Controllers',          href: '/smart-controllers' },
   { label: 'Rain & Freeze Sensors',      href: '/rain-freeze-sensors' },
-  { label: 'Electrical Troubleshooting', href: '/electrical-troubleshooting' },
-  { label: 'Head Replacement',           href: '/head-replacement' },
+ 
   { label: 'Water-Saving Solutions',     href: '/water-saving-solutions' },
   { label: 'Seasonal Maintenance',       href: '/seasonal-maintenance' },
   { label: 'Commercial Services',        href: '/commercial-services' },
@@ -18,12 +17,15 @@ const sprinklerServices = [
 ];
 
 const serviceAreas = [
-  { label: 'Allen',        href: '/service-areas/allen' },
-  { label: 'Frisco',       href: '/service-areas/frisco' },
+  { label: 'Carollton',        href: '/service-areas/carollton' },
+  { label: 'Iriving',       href: '/service-areas/iriving' },
   { label: 'McKinney',     href: '/service-areas/mckinney' },
   { label: 'Plano',        href: '/service-areas/plano' },
   { label: 'Dallas',       href: '/service-areas/dallas' },
   { label: 'Flower Mound', href: '/service-areas/flower-mound' },
+  { label: 'Garland', href: '/service-areas/garland' },
+  { label: 'Richardson', href: '/service-areas/richardson' },
+  { label: 'Rowlett', href: '/service-areas/rowlett' },
 ];
 
 export default function Navbar() {
