@@ -6,7 +6,8 @@ export async function GET() {
   try {
     const data = await readBlocked();
     return NextResponse.json(data);
-  } catch {
+  } catch (err) {
+    console.error('Read blocked error:', err);
     return NextResponse.json({ blocked: {}, blockDays: 3 });
   }
 }
@@ -16,7 +17,8 @@ export async function POST(request) {
     const { blocked, blockDays } = await request.json();
     await writeBlocked({ blocked: blocked || {}, blockDays: blockDays ?? 3 });
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    console.error('Write blocked error:', err);
     return NextResponse.json({ error: 'Update failed.' }, { status: 500 });
   }
 }

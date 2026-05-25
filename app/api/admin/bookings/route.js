@@ -6,7 +6,8 @@ export async function GET() {
   try {
     const bookings = await readBookings();
     return NextResponse.json({ bookings });
-  } catch {
+  } catch (err) {
+    console.error('Admin bookings error:', err);
     return NextResponse.json({ bookings: [] });
   }
 }

@@ -1,30 +1,23 @@
 // app/api/bookings/route.js
-// POST — create new booking
 import { NextResponse } from 'next/server';
-import { readBookings, writeBookings } from '@/lib/bookingsDb';
+import { createBooking } from '@/lib/bookingsDb';
 
 export async function POST(request) {
   try {
     const body = await request.json();
-    const { name, phone, email, address, service, notes, date, dateObj, slot, slotLabel } = body;
+    const { name, phone, email, address, service, notes,
+            date, dateObj, slot, slotLabel } = body;
 
     if (!name || !phone || !address || !service || !date || !slot) {
       return NextResponse.json({ error: 'Required fields missing.' }, { status: 400 });
     }
 
-    const bookings = await readBookings();
-    const newBooking = {
-      id: `booking_${Date.now()}`,
+    const booking = await createBooking({
       name, phone, email, address, service, notes,
-      date, dateObj, slot, slotLabel,
-      status: 'pending',
-      createdAt: new Date().toISOString(),
-    };
+      date, date_obj: dateObj, slot, slot_label: slotLabel,
+    });
 
-    bookings.push(newBooking);
-    await writeBookings(bookings);
-
-    return NextResponse.json({ success: true, booking: newBooking }, { status: 200 });
+    return NextResponse.json({ success: true, booking }, { status: 200 });
   } catch (error) {
     console.error('Booking error:', error);
     return NextResponse.json({ error: 'Internal server error.' }, { status: 500 });

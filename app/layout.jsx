@@ -1,6 +1,15 @@
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { initDb } from '../lib/db';
+
+// Auto-initialize database tables on first run
+// Works for both SQLite (local) and PostgreSQL (VPS)
+let dbInitialized = false;
+if (!dbInitialized) {
+  dbInitialized = true;
+  initDb().catch(err => console.error('DB init error:', err));
+}
 
 export const metadata = {
   metadataBase: new URL('https://sprinklersandlawns.com'),
@@ -16,9 +25,6 @@ export const metadata = {
     url: 'https://sprinklersandlawns.com',
     siteName: 'Sprinklers and Lawns',
   },
-  twitter: {
-    card: 'summary_large_image',
-  },
 };
 
 export default function RootLayout({ children }) {
@@ -29,9 +35,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body suppressHydrationWarning>
+      <body>
         <Navbar />
-        <main style={{ minHeight: '60vh' }}>{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

@@ -9,6 +9,8 @@ const sprinklerServices = [
   { label: 'Irrigation Design',          href: '/irrigation-design' },
   { label: 'Smart Controllers',          href: '/smart-controllers' },
   { label: 'Rain & Freeze Sensors',      href: '/rain-freeze-sensors' },
+  { label: 'Electrical Troubleshooting', href: '/electrical-troubleshooting' },
+  { label: 'Head Replacement',           href: '/head-replacement' },
   { label: 'Water-Saving Solutions',     href: '/water-saving-solutions' },
   { label: 'Seasonal Maintenance',       href: '/seasonal-maintenance' },
   { label: 'Commercial Services',        href: '/commercial-services' },
@@ -16,14 +18,12 @@ const sprinklerServices = [
 ];
 
 const serviceAreas = [
-  { label: 'Carollton',        href: '/service-areas/carollton' },
-  { label: 'Garland',       href: '/service-areas/garland' },
-  { label: 'Iriving',     href: '/service-areas/iriving' },
+  { label: 'Allen',        href: '/service-areas/allen' },
+  { label: 'Frisco',       href: '/service-areas/frisco' },
+  { label: 'McKinney',     href: '/service-areas/mckinney' },
   { label: 'Plano',        href: '/service-areas/plano' },
   { label: 'Dallas',       href: '/service-areas/dallas' },
   { label: 'Flower Mound', href: '/service-areas/flower-mound' },
-  { label: 'Richardson', href: '/service-areas/richardson' },
-  { label: 'Rowlett', href: '/service-areas/rowlett' },
 ];
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
 
   const navLinkStyle = (active = false) => ({
     display: 'inline-flex', alignItems: 'center', gap: '5px',
-    padding: '8px 14px', fontSize: '15px', fontWeight: 500,
+    padding: '8px 12px', fontSize: '14px', fontWeight: 500,
     color: active ? 'var(--green)' : 'var(--text)',
     background: active ? 'var(--green-faint)' : 'none',
     borderRadius: 'var(--r-sm)', textDecoration: 'none',
@@ -64,7 +64,7 @@ export default function Navbar() {
       }}>
         <div className="container" style={{
           display: 'flex', justifyContent: 'center',
-          alignItems: 'center', gap: '20px', flexWrap: 'wrap',
+          alignItems: 'center', gap: '18px', flexWrap: 'wrap',
         }}>
           <span>📞 <strong>(972) 755-9019</strong></span>
           <span style={{ color: 'rgba(255,255,255,.25)' }}>|</span>
@@ -85,7 +85,7 @@ export default function Navbar() {
       }}>
         <div className="container" style={{
           display: 'flex', alignItems: 'center',
-          justifyContent: 'space-between', height: '72px', gap: '16px',
+          justifyContent: 'space-between', height: '70px', gap: '12px',
         }}>
 
           {/* Logo */}
@@ -93,18 +93,19 @@ export default function Navbar() {
             <Image
               src="/images/SprinklesLogo.webp"
               alt="Sprinklers and Lawns — Dallas Fort Worth Irrigation"
-              width={200} height={60}
-              style={{ objectFit: 'contain', height: '48px', width: 'auto' }}
+              width={190} height={58}
+              style={{ objectFit: 'contain', height: '46px', width: 'auto' }}
               priority
             />
           </Link>
 
-          {/* Desktop nav — hidden on mobile via JS state */}
+          {/* Desktop nav */}
           {!isMobile && (
             <div style={{ display: 'flex', alignItems: 'center', gap: '2px', flex: 1, justifyContent: 'center' }}>
               <Link href="/"      style={navLinkStyle()}>Home</Link>
               <Link href="/about" style={navLinkStyle()}>About</Link>
 
+              {/* Dropdowns */}
               {[
                 { key: 'svc',  label: 'Sprinkler Services', items: sprinklerServices },
                 { key: 'area', label: 'Service Areas',      items: serviceAreas },
@@ -117,8 +118,7 @@ export default function Navbar() {
                     <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
                       <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6"
                         strokeLinecap="round" strokeLinejoin="round"
-                        style={{ transform: dropdown === key ? 'rotate(180deg)' : 'none', transition: 'transform .2s', transformOrigin: 'center' }}
-                      />
+                        style={{ transform: dropdown === key ? 'rotate(180deg)' : 'none', transition: 'transform .2s', transformOrigin: 'center' }} />
                     </svg>
                   </button>
                   {dropdown === key && (
@@ -131,13 +131,12 @@ export default function Navbar() {
                     }}>
                       {items.map(i => (
                         <Link key={i.href} href={i.href} style={{
-                          display: 'block', padding: '9px 16px', fontSize: '14px',
+                          display: 'block', padding: '9px 14px', fontSize: '14px',
                           color: 'var(--text-muted)', borderRadius: 'var(--r-sm)',
                           textDecoration: 'none', transition: 'background .15s, color .15s',
                         }}
                           onMouseEnter={e => { e.currentTarget.style.background = 'var(--green-faint)'; e.currentTarget.style.color = 'var(--green-dark)'; }}
-                          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--text-muted)'; }}
-                        >
+                          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--text-muted)'; }}>
                           {i.label}
                         </Link>
                       ))}
@@ -151,22 +150,36 @@ export default function Navbar() {
             </div>
           )}
 
-          {/* Desktop CTA */}
+          {/* Desktop CTAs */}
           {!isMobile && (
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexShrink: 0 }}>
+            <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexShrink: 0 }}>
               <a href="tel:9727559019" style={{
-                fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '15px',
+                fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '14px',
                 color: 'var(--green-dark)', textDecoration: 'none', whiteSpace: 'nowrap',
               }}>
                 📞 (972) 755-9019
               </a>
-              <Link href="/contact" className="btn-primary" style={{ padding: '10px 20px', fontSize: '14px' }}>
+              {/* ── BOOK NOW BUTTON ── */}
+              <Link href="/book" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                background: 'white', color: 'var(--green-dark)',
+                border: '2px solid var(--green)',
+                fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '13px',
+                padding: '8px 16px', borderRadius: 'var(--r-md)',
+                textDecoration: 'none', whiteSpace: 'nowrap',
+                transition: 'background .18s, color .18s',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'var(--green)'; e.currentTarget.style.color = 'white'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.color = 'var(--green-dark)'; }}>
+                📅 Book Now
+              </Link>
+              <Link href="/contact" className="btn-primary" style={{ padding: '9px 18px', fontSize: '13px' }}>
                 Free Quote
               </Link>
             </div>
           )}
 
-          {/* Mobile hamburger */}
+          {/* Hamburger */}
           {isMobile && (
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -176,13 +189,11 @@ export default function Navbar() {
                 borderRadius: 'var(--r-sm)', padding: '8px', cursor: 'pointer',
                 display: 'flex', flexDirection: 'column', gap: '5px',
                 width: '42px', height: '42px', justifyContent: 'center', alignItems: 'center',
-              }}
-            >
+              }}>
               {[0, 1, 2].map(i => (
                 <span key={i} style={{
                   display: 'block', width: '20px', height: '2px',
-                  background: 'var(--green)', borderRadius: '2px',
-                  transition: 'all .25s',
+                  background: 'var(--green)', borderRadius: '2px', transition: 'all .25s',
                   transform: mobileOpen && i === 0 ? 'translateY(7px) rotate(45deg)'
                             : mobileOpen && i === 2 ? 'translateY(-7px) rotate(-45deg)'
                             : 'none',
@@ -200,7 +211,7 @@ export default function Navbar() {
             padding: '8px 0 20px', maxHeight: '80vh', overflowY: 'auto',
           }}>
             <div className="container">
-              {[['Home','/'],['About','/about'],['Blog','/blog'],['Contact','/contact']].map(([label,href]) => (
+              {[['Home','/'],['About','/about'],['Blog','/blog'],['Contact','/contact']].map(([label, href]) => (
                 <Link key={href} href={href} onClick={() => setMobileOpen(false)} style={{
                   display: 'block', padding: '13px 0',
                   borderBottom: '1px solid var(--gray-100)',
@@ -224,27 +235,21 @@ export default function Navbar() {
                       fontSize: '16px', fontWeight: 500,
                       color: mobileExp === key ? 'var(--green)' : 'var(--text)',
                       cursor: 'pointer', fontFamily: 'var(--sans)',
-                    }}
-                  >
+                    }}>
                     {label}
                     <svg width="14" height="14" viewBox="0 0 12 12" fill="none"
                       style={{ transform: mobileExp === key ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}>
-                      <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6"
-                        strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </button>
                   {mobileExp === key && (
                     <div style={{ paddingBottom: '8px' }}>
                       {items.map(i => (
-                        <Link key={i.href} href={i.href}
-                          onClick={() => setMobileOpen(false)}
-                          style={{
-                            display: 'block', padding: '9px 0 9px 16px',
-                            fontSize: '14px', color: 'var(--text-muted)',
-                            borderLeft: '2px solid var(--green-light)',
-                            textDecoration: 'none',
-                          }}
-                        >
+                        <Link key={i.href} href={i.href} onClick={() => setMobileOpen(false)} style={{
+                          display: 'block', padding: '9px 0 9px 14px',
+                          fontSize: '14px', color: 'var(--text-muted)',
+                          borderLeft: '2px solid var(--green-light)', textDecoration: 'none',
+                        }}>
                           {i.label}
                         </Link>
                       ))}
@@ -253,16 +258,27 @@ export default function Navbar() {
                 </div>
               ))}
 
-              <div style={{ paddingTop: '16px', display: 'flex', gap: '10px' }}>
-                <a href="tel:9727559019" className="btn-secondary"
-                  style={{ flex: 1, justifyContent: 'center', fontSize: '14px' }}>
-                  📞 Call Now
-                </a>
-                <Link href="/contact" className="btn-primary"
-                  style={{ flex: 1, justifyContent: 'center', fontSize: '14px' }}
-                  onClick={() => setMobileOpen(false)}>
-                  Free Quote
+              {/* Mobile CTAs */}
+              <div style={{ paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {/* Book Now — prominent in mobile */}
+                <Link href="/book" onClick={() => setMobileOpen(false)} style={{
+                  display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '6px',
+                  background: 'white', color: 'var(--green-dark)',
+                  border: '2px solid var(--green)',
+                  fontFamily: 'var(--sans)', fontWeight: 700, fontSize: '15px',
+                  padding: '13px', borderRadius: 'var(--r-md)', textDecoration: 'none',
+                }}>
+                  📅 Book Appointment
                 </Link>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <a href="tel:9727559019" className="btn-secondary" style={{ flex: 1, justifyContent: 'center', fontSize: '14px' }}>
+                    📞 Call Now
+                  </a>
+                  <Link href="/contact" className="btn-primary" style={{ flex: 1, justifyContent: 'center', fontSize: '14px' }}
+                    onClick={() => setMobileOpen(false)}>
+                    Free Quote
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

@@ -5,24 +5,24 @@ import { readBlocked } from '@/lib/blockedDb';
 
 export async function GET() {
   try {
-    const bookings = await readBookings();
-    const { blocked } = await readBlocked();
+    const [bookings, { blocked }] = await Promise.all([
+      readBookings(),
+      readBlocked(),
+    ]);
 
-    // Convert bookings to slot keys
-    const bookedSlots = {};
+    const bookedSlots = { ...(blocked || {}) };
+
     bookings.forEach(b => {
-      if (b.dateObj && b.slot && b.status !== 'cancelled') {
-        const d = new Date(b.dateObj);
+      if (b.date_obj && b.slot && b.status !== 'cancelled') {
+        const d = new Date(b.date_obj);
         const key = `${d.getFullYear()}-${d.getMonth()+1}-${d.getDate()}-${b.slot}`;
         bookedSlots[key] = true;
       }
     });
 
-    // Merge manual blocked slots
-    Object.keys(blocked || {}).forEach(k => { bookedSlots[k] = true; });
-
     return NextResponse.json({ booked: bookedSlots });
-  } catch {
+  } catch (err) {
+    console.error('Slots error:', err);
     return NextResponse.json({ booked: {} });
   }
 }
