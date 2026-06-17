@@ -5,9 +5,9 @@ export const metadata = {
   keywords: 'irrigation services Rowlett TX, sprinkler repair Rowlett Texas, sprinkler installation Rowlett TX, irrigation company Rowlett Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/rowlett' },
 };
-const HERO = 'https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1600&q=85&fit=crop';
-const IMG1 = 'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=900&q=85&fit=crop';
-const IMG2 = 'https://images.unsplash.com/photo-1515263487990-61b07816b324?w=900&q=85&fit=crop';
+const HERO = '/images/serviceareas/Rowlett_/rowlett (2).jpg';
+const IMG1 = '/images/serviceareas/Rowlett_/rowlett (1).jpg';
+const IMG2 = '/images/serviceareas/Rowlett_/rowlett (2).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Rowlett properties. Priced by heads to ensure proper coverage.' },

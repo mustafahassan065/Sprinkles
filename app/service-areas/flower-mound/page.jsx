@@ -5,9 +5,9 @@ export const metadata = {
   keywords: 'irrigation services Flower Mound TX, sprinkler repair Flower Mound Texas, sprinkler installation Flower Mound TX, irrigation company Flower Mound Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/flower-mound' },
 };
-const HERO = 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=1600&q=85&fit=crop';
-const IMG1 = 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=900&q=85&fit=crop';
-const IMG2 = 'https://images.unsplash.com/photo-1578774296842-c45e472b3028?w=900&q=85&fit=crop';
+const HERO = '/images/serviceareas/flowermound/flowermound (1).jpg';
+const IMG1 = '/images/serviceareas/flowermound/flowermound (2).jpg';
+const IMG2 = '/images/serviceareas/flowermound/flowermound (1).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Flower Mound properties. Priced by heads to ensure proper coverage.' },

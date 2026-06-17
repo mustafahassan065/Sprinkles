@@ -5,9 +5,9 @@ export const metadata = {
   keywords: 'irrigation services Garland TX, sprinkler repair Garland Texas, sprinkler installation Garland TX, irrigation company Garland Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/garland' },
 };
-const HERO = 'https://plus.unsplash.com/premium_photo-1661845609789-635c5e35c4ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FyZGVuJTIwaXJyaWdhdGlvbnxlbnwwfHwwfHx8MA%3D%3D';
-const IMG1 = 'https://images.unsplash.com/photo-1616168558572-69aed7a96677?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGlycmlnYXRpb24lMjByZXBhaXIlMjBzZXJ2aWNlfGVufDB8fDB8fHww';
-const IMG2 = 'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=900&q=85&fit=crop';
+const HERO = '/images/serviceareas/Garland/garland (1).jpg';
+const IMG1 = '/images/serviceareas/Garland/garland (2).jpg';
+const IMG2 = '/images/serviceareas/Garland/garland (1).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Garland properties. Priced by heads to ensure proper coverage.' },

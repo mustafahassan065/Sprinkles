@@ -5,9 +5,9 @@ export const metadata = {
   keywords: 'irrigation services Richardson TX, sprinkler repair Richardson Texas, sprinkler installation Richardson TX, irrigation company Richardson Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/richardson' },
 };
-const HERO = 'https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=1600&q=85&fit=crop';
-const IMG1 = 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=900&q=85&fit=crop';
-const IMG2 = 'https://images.unsplash.com/photo-1535189043414-47a3c49a0bed?w=900&q=85&fit=crop';
+const HERO = '/images/serviceareas/Richardson_/richardson (1).jpg';
+const IMG1 = '/images/serviceareas/Richardson_/richardson (2).jpg';
+const IMG2 = '/images/serviceareas/Richardson_/richardson (1).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Richardson properties. Priced by heads to ensure proper coverage.' },

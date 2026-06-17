@@ -65,9 +65,9 @@ export default function BlogPage() {
               <div style={{ display:'flex', flexDirection:'column', gap:'24px' }}>
                 {filtered.map(post => (
                   <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card"
-                    style={{ textDecoration:'none', display:'flex', gap:'24px', background:'white', borderRadius:'12px', overflow:'hidden', border:'1px solid var(--gray-100)', boxShadow:'0 1px 4px rgba(0,0,0,.06)', transition:'box-shadow .2s' }}>
+                    style={{ textDecoration:'none', display:'flex', flexWrap:'wrap', gap:0, background:'white', borderRadius:'12px', overflow:'hidden', border:'1px solid var(--gray-100)', boxShadow:'0 1px 4px rgba(0,0,0,.06)', transition:'box-shadow .2s' }}>
                     {/* Image — left side */}
-                    <div style={{ width:'220px', flexShrink:0, overflow:'hidden' }}>
+                    <div style={{ width:'clamp(160px,30%,220px)', minWidth:'160px', flexShrink:0, overflow:'hidden' }}>
                       <img src={post.image} alt={post.title} className="blog-card-img"
                         style={{ width:'100%', height:'100%', objectFit:'cover', display:'block', minHeight:'160px' }} />
                     </div>

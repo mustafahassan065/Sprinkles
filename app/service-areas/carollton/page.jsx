@@ -8,9 +8,9 @@ export const metadata = {
 };
 
 const IMG = {
-  hero:  'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1600&q=85&fit=crop',
-  img1:  'https://images.unsplash.com/photo-1592861956120-e524fc739696?w=900&q=85&fit=crop',
-  img2:  'https://images.unsplash.com/photo-1490750967868-88df5691cc17?w=900&q=85&fit=crop',
+  hero:  '/images/serviceareas/carrolton/carrollton (1).jpg',
+  img1:  '/images/serviceareas/carrolton/carrollton (2).jpg',
+  img2:  '/images/serviceareas/carrolton/carrollton (1).jpg',
 };
 
 const services = [

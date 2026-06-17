@@ -15,7 +15,10 @@ const services = [
   'Electrical Troubleshooting','Seasonal Maintenance','Commercial Services','Other',
 ];
 
-
+export const metadata = {
+  title: 'Contact Sprinklers and Lawns | Schedule Irrigation Service Dallas-Ft. Worth',
+  description: 'Contact Sprinklers and Lawns to schedule irrigation service in Dallas-Ft. Worth. Call (972) 755-9019 or request a service call online.',
+};
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -67,7 +70,7 @@ export default function ContactPage() {
       <section className="section bg-white">
         <div className="container">
           {/* Equal height columns */}
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'48px', alignItems:'start' }}>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(320px,1fr))', gap:'40px', alignItems:'start' }}>
 
             {/* LEFT — form */}
             <div>

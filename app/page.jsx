@@ -238,7 +238,7 @@ export default function HomePage() {
           </div>
 
           {/* Pricing — both columns EQUAL height */}
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'32px', alignItems:'start' }}>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'28px', alignItems:'start' }}>
             <div className="card">
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'18px', fontWeight:600, color:'var(--text)', marginBottom:'16px' }}>Repair Services</h3>
               <table style={pricingTableStyle}>

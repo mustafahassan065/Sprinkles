@@ -148,6 +148,7 @@ export default function Navbar() {
               ))}
 
               <Link href="/blog"    style={navLinkStyle()}>Blog</Link>
+              <Link href="/gallery" style={navLinkStyle()}>Gallery</Link>
               <Link href="/contact" style={navLinkStyle()}>Contact</Link>
             </div>
           )}
@@ -213,7 +214,7 @@ export default function Navbar() {
             padding: '8px 0 20px', maxHeight: '80vh', overflowY: 'auto',
           }}>
             <div className="container">
-              {[['Home','/'],['About','/about'],['Blog','/blog'],['Contact','/contact']].map(([label, href]) => (
+              {[['Home','/'],['About','/about'],['Blog','/blog'],['Gallery','/gallery'],['Contact','/contact']].map(([label, href]) => (
                 <Link key={href} href={href} onClick={() => setMobileOpen(false)} style={{
                   display: 'block', padding: '13px 0',
                   borderBottom: '1px solid var(--gray-100)',

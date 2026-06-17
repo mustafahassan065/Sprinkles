@@ -8,9 +8,9 @@ export const metadata = {
 };
 
 const IMG = {
-  hero: 'https://images.unsplash.com/photo-1560343090-f0409e92791a?w=1600&q=85&fit=crop',
-  img1: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&q=85&fit=crop',
-  img2: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&fit=crop',
+  hero: '/images/serviceareas/Mckinney_/mickney (1).jpg',
+  img1: '/images/serviceareas/Mckinney_/mickney (2).jpg',
+  img2: '/images/serviceareas/Mckinney_/mickney (1).jpg',
 };
 
 const services = [
