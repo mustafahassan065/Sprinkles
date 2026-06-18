@@ -12,7 +12,7 @@ export const metadata = {
 const IMG = {
   hero:   'https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1600&q=85&fit=crop',
   split1: 'https://images.unsplash.com/photo-1543512214-318c7553f230?w=900&q=85&fit=crop',
-  split2: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=900&q=85&fit=crop',
+  split2: 'https://images.unsplash.com/photo-1743742566156-f1745850281a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U2Vhc29uYWwlMjBBZGp1c3RtZW50cyUyMGlycmlnYXRpb258ZW58MHx8MHx8fDA%3D',
 };
 
 const whyMatters = [
