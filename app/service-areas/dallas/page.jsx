@@ -5,9 +5,9 @@ export const metadata = {
   keywords: 'irrigation services Dallas TX, sprinkler repair Dallas Texas, sprinkler installation Dallas TX, irrigation company Dallas Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/dallas' },
 };
-const HERO = 'https://images.unsplash.com/photo-1545156521-77bd85671d30?w=1600&q=85&fit=crop';
-const IMG1 = 'https://images.unsplash.com/photo-1596005554384-d293674c91d7?w=900&q=85&fit=crop';
-const IMG2 = 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&q=85&fit=crop';
+const HERO = '/images/serviceareas/Dallas/dallas (3).jpg';
+const IMG1 = '/images/serviceareas/Dallas/dallas (1).jpg';
+const IMG2 = '/images/serviceareas/Dallas/dallas (2).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Dallas properties. Priced by heads to ensure proper coverage.' },

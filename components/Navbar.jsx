@@ -17,8 +17,8 @@ const sprinklerServices = [
 ];
 
 const serviceAreas = [
-  { label: 'Carollton',        href: '/service-areas/carollton' },
-  { label: 'Iriving',       href: '/service-areas/iriving' },
+  { label: 'Carrollton',        href: '/service-areas/carollton' },
+  { label: 'Irving',       href: '/service-areas/iriving' },
   { label: 'McKinney',     href: '/service-areas/mckinney' },
   { label: 'Plano',        href: '/service-areas/plano' },
   { label: 'Dallas',       href: '/service-areas/dallas' },

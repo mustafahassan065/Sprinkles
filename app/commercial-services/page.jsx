@@ -10,8 +10,8 @@ export const metadata = {
 };
 
 const IMG = {
-  hero:   'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=85&fit=crop',
-  split1: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=85&fit=crop',
+  hero:   '/images/commercialservice (1).jpg',
+  split1: '/images/commercialservice (2).jpg',
   split2: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=85&fit=crop',
 };
 

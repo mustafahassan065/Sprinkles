@@ -5,9 +5,9 @@ export const metadata = {
   keywords: 'irrigation services Plano TX, sprinkler repair Plano Texas, sprinkler installation Plano TX, irrigation company Plano Texas',
   alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/plano' },
 };
-const HERO = 'https://images.unsplash.com/photo-1471879832106-c7ab9e0cee23?w=1600&q=85&fit=crop';
-const IMG1 = 'https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=900&q=85&fit=crop';
-const IMG2 = 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900&q=85&fit=crop';
+const HERO = '/images/serviceareas/Plano/plano (1).jpg';
+const IMG1 = '/images/serviceareas/Plano/plano (2).jpg';
+const IMG2 = '/images/serviceareas/Plano/plano (3).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Plano properties. Priced by heads to ensure proper coverage.' },

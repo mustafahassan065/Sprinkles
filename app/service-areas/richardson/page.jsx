@@ -7,7 +7,7 @@ export const metadata = {
 };
 const HERO = '/images/serviceareas/Richardson_/richardson (1).jpg';
 const IMG1 = '/images/serviceareas/Richardson_/richardson (2).jpg';
-const IMG2 = '/images/serviceareas/Richardson_/richardson (1).jpg';
+const IMG2 = '/images/serviceareas/Richardson_/richardson (3).jpg';
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Richardson properties. Priced by heads to ensure proper coverage.' },

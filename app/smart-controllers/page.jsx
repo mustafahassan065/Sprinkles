@@ -13,7 +13,7 @@ export const metadata = {
 const IMG = {
   hero:   'https://images.unsplash.com/photo-1563906267088-b029e7101114?w=1600&q=85&fit=crop',
   split1: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=85&fit=crop',
-  split2: 'https://images.unsplash.com/photo-1544986581-efac9d9e5e8c?w=900&q=85&fit=crop',
+  split2: 'https://images.unsplash.com/photo-1660153083172-37cf41c10c99?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFNtYXJ0JTIwSXJyaWdhdGlvbiUyMENvbnRyb2xsZXJ8ZW58MHx8MHx8fDA%3D',
 };
 
 const weatherReasons = [

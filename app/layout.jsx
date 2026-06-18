@@ -24,6 +24,19 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://sprinklersandlawns.com',
     siteName: 'Sprinklers and Lawns',
+    images: [
+      {
+        url: '/images/SprinklesLogo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Sprinklers and Lawns',
+      },
+    ],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 };
 
@@ -34,6 +47,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" type="image/webp" href="/images/SprinklesLogo.webp" />
       </head>
       <body>
         <Navbar />

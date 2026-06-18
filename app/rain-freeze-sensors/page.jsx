@@ -235,7 +235,7 @@ export default function RainFreezeSensorsPage() {
               <span className="eyebrow">Professional Installation and Adjustment</span>
               <h2 className="section-title">
                 Complete Sensor Services with{' '}
-                <em>System Testing and Seasonal Checks</em>
+                <em>Testing Sensors on System check</em>
               </h2>
               <div className="divider" />
               <p style={{ color:'var(--text-muted)', marginBottom:'16px', fontSize:'17px' }}>
