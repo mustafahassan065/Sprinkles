@@ -50,7 +50,9 @@ export default function BookingPage() {
   function isAutoBlocked(date) {
     const today = new Date(); today.setHours(0,0,0,0);
     const d = new Date(date); d.setHours(0,0,0,0);
-    return Math.floor((d - today) / 86400000) < blockDays;
+    const diffDays = Math.floor((d - today) / 86400000);
+    // Block past dates AND next N days (default 3: today, tomorrow, day after)
+    return diffDays < 0 || diffDays < blockDays;
   }
 
   function isBooked(date, slotId) {
@@ -140,7 +142,7 @@ export default function BookingPage() {
               {/* Color legend */}
               <div style={{ display:'flex', gap:'16px', marginBottom:'20px', flexWrap:'wrap', alignItems:'center' }}>
                 <span style={{ fontSize:'13px', fontWeight:600, color:'var(--text-muted)' }}>Legend:</span>
-                {[['#f0faf0','#4a9020','🟢 Available'],['#fee2e2','#991b1b','🔴 Unavailable'],['#f3f4f6','#9ca3af','⬜ Booked']].map(([bg,color,label]) => (
+                {[['#f0faf0','#4a9020','🟢 Available — Select to Book'],['#fee2e2','#991b1b','🔴 Unavailable (Next 3 Days)'],['#f3f4f6','#9ca3af','⬜ Already Booked']].map(([bg,color,label]) => (
                   <div key={label} style={{ display:'flex', alignItems:'center', gap:'6px', fontSize:'13px', color:'var(--text-muted)' }}>
                     <span style={{ width:'14px', height:'14px', borderRadius:'3px', background:bg, border:`2px solid ${color}`, display:'inline-block', flexShrink:0 }} />
                     {label}
@@ -159,7 +161,7 @@ export default function BookingPage() {
                     {fmtShort(weekDates[0])} – {fmtShort(weekDates[5])}, {weekDates[0].getFullYear()}
                   </div>
                   <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'2px' }}>
-                    {weekOffset === 0 ? 'Current Week' : `Week ${weekOffset+1} from now`}
+                    {weekOffset === 0 ? 'This Week' : weekOffset === 1 ? 'Next Week' : `${weekOffset} Weeks Ahead`}
                   </div>
                 </div>
                 <button onClick={() => setWeekOffset(w=>w+1)}

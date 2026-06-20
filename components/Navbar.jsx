@@ -37,7 +37,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 6);
-    const onResize = () => setIsMobile(window.innerWidth <= 960);
+    const onResize = () => setIsMobile(window.innerWidth <= 1100);
     onResize();
     window.addEventListener('scroll', onScroll);
     window.addEventListener('resize', onResize);
@@ -87,7 +87,7 @@ export default function Navbar() {
       }}>
         <div className="container" style={{
           display: 'flex', alignItems: 'center',
-          justifyContent: 'space-between', height: '70px', gap: '12px',
+          justifyContent: 'space-between', height: '70px', gap: '12px', width: '100%',
         }}>
 
           {/* Logo */}
@@ -103,7 +103,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           {!isMobile && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '2px', flex: 1, justifyContent: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '2px', flex: 1, justifyContent: 'center', overflow: 'hidden', minWidth: 0 }}>
               <Link href="/"      style={navLinkStyle()}>Home</Link>
               <Link href="/about" style={navLinkStyle()}>About</Link>
 
