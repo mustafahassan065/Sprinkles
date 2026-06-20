@@ -103,7 +103,7 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           {!isMobile && (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '2px', flex: 1, justifyContent: 'center', overflow: 'hidden', minWidth: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '2px', flex: 1, justifyContent: 'center' }}>
               <Link href="/"      style={navLinkStyle()}>Home</Link>
               <Link href="/about" style={navLinkStyle()}>About</Link>
 
