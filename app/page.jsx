@@ -364,6 +364,174 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+      {/* ── REVIEWS SECTION ── */}
+{/* Add this AFTER the SERVICE AREAS section and BEFORE the CTA section */}
+<section style={{ background:'white', padding:'72px 0' }}>
+  <div className="container">
+    <div style={{ textAlign:'center', marginBottom:'48px' }}>
+      <div className="eyebrow">What Our Customers Say</div>
+      <h2 style={{ fontFamily:'var(--serif)', fontSize:'clamp(26px,3.5vw,38px)', fontWeight:400, color:'var(--text)', marginTop:'8px', marginBottom:'12px' }}>
+        Real Reviews from <em>Real Customers</em>
+      </h2>
+      {/* Google rating summary */}
+      <div style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'var(--off-white)', border:'1px solid var(--gray-100)', borderRadius:'40px', padding:'10px 22px', marginTop:'8px' }}>
+        <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <span style={{ fontSize:'15px', fontWeight:700, color:'var(--text)' }}>5.0</span>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s => <span key={s} style={{ color:'#FBBC05', fontSize:'18px' }}>★</span>)}
+        </div>
+        <span style={{ fontSize:'14px', color:'var(--text-muted)' }}>Google Reviews</span>
+      </div>
+    </div>
+
+    {/* Reviews grid */}
+    <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))', gap:'20px' }}>
+
+      {/* Review 1 — Catherine Gibbons */}
+      <div style={{ background:'white', border:'1px solid var(--gray-100)', borderRadius:'14px', padding:'24px', boxShadow:'0 2px 12px rgba(0,0,0,.06)', display:'flex', flexDirection:'column', gap:'14px' }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+            <div style={{ width:'44px', height:'44px', borderRadius:'50%', background:'linear-gradient(135deg,#4285F4,#34A853)', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:'18px', flexShrink:0 }}>
+              C
+            </div>
+            <div>
+              <div style={{ fontWeight:700, fontSize:'15px', color:'var(--text)' }}>Catherine Gibbons</div>
+              <div style={{ fontSize:'12px', color:'var(--text-muted)' }}>12 reviews · 1 photo</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s=><span key={s} style={{ color:'#FBBC05', fontSize:'17px' }}>★</span>)}
+        </div>
+        <p style={{ fontSize:'14px', color:'var(--text-muted)', lineHeight:1.75, margin:0 }}>
+          I have used Joe Davis (Sprinklers and Lawns) for quite a few years. I have never been disappointed with the work he does. He also is helpful in explaining how to use my sprinkler system. What he charges for his time and materials (if any are needed) are very reasonable. I highly recommend this company.
+        </p>
+        <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'auto' }}>42 mins ago</div>
+      </div>
+
+      {/* Review 2 — Barbara Hayman */}
+      <div style={{ background:'white', border:'1px solid var(--gray-100)', borderRadius:'14px', padding:'24px', boxShadow:'0 2px 12px rgba(0,0,0,.06)', display:'flex', flexDirection:'column', gap:'14px' }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+            <div style={{ width:'44px', height:'44px', borderRadius:'50%', background:'linear-gradient(135deg,#EA4335,#FBBC05)', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:'18px', flexShrink:0 }}>
+              B
+            </div>
+            <div>
+              <div style={{ fontWeight:700, fontSize:'15px', color:'var(--text)' }}>Barbara Hayman</div>
+              <div style={{ fontSize:'12px', color:'var(--text-muted)' }}>1 review · 0 photos</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s=><span key={s} style={{ color:'#FBBC05', fontSize:'17px' }}>★</span>)}
+        </div>
+        <p style={{ fontSize:'14px', color:'var(--text-muted)', lineHeight:1.75, margin:0 }}>
+          Great work, great service!!!
+        </p>
+        <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'auto' }}>5 weeks ago</div>
+      </div>
+
+      {/* Review 3 — Sammar Hussain */}
+      <div style={{ background:'white', border:'1px solid var(--gray-100)', borderRadius:'14px', padding:'24px', boxShadow:'0 2px 12px rgba(0,0,0,.06)', display:'flex', flexDirection:'column', gap:'14px' }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+            <div style={{ width:'44px', height:'44px', borderRadius:'50%', background:'linear-gradient(135deg,#34A853,#4285F4)', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:'18px', flexShrink:0 }}>
+              S
+            </div>
+            <div>
+              <div style={{ fontWeight:700, fontSize:'15px', color:'var(--text)' }}>Sammar Hussain</div>
+              <div style={{ fontSize:'12px', color:'var(--text-muted)' }}>1 review · 0 photos</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s=><span key={s} style={{ color:'#FBBC05', fontSize:'17px' }}>★</span>)}
+        </div>
+        <p style={{ fontSize:'14px', color:'var(--text-muted)', lineHeight:1.75, margin:0 }}>
+          This company is great. Joe takes the time to explain everything about my system. Makes sure everything is working.
+        </p>
+        <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'auto' }}>45 weeks ago</div>
+      </div>
+
+      {/* Review 4 — Bob Seebold */}
+      <div style={{ background:'white', border:'1px solid var(--gray-100)', borderRadius:'14px', padding:'24px', boxShadow:'0 2px 12px rgba(0,0,0,.06)', display:'flex', flexDirection:'column', gap:'14px' }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+            <div style={{ width:'44px', height:'44px', borderRadius:'50%', background:'linear-gradient(135deg,#FBBC05,#EA4335)', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:'18px', flexShrink:0 }}>
+              B
+            </div>
+            <div>
+              <div style={{ fontWeight:700, fontSize:'15px', color:'var(--text)' }}>Bob Seebold</div>
+              <div style={{ fontSize:'12px', color:'var(--text-muted)' }}>3 reviews · 0 photos</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s=><span key={s} style={{ color:'#FBBC05', fontSize:'17px' }}>★</span>)}
+        </div>
+        <p style={{ fontSize:'14px', color:'var(--text-muted)', lineHeight:1.75, margin:0 }}>
+          Best in the business!
+        </p>
+        <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'auto' }}>45 weeks ago</div>
+      </div>
+
+      {/* Review 5 — Mark Davis */}
+      <div style={{ background:'white', border:'1px solid var(--gray-100)', borderRadius:'14px', padding:'24px', boxShadow:'0 2px 12px rgba(0,0,0,.06)', display:'flex', flexDirection:'column', gap:'14px' }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+            <div style={{ width:'44px', height:'44px', borderRadius:'50%', background:'linear-gradient(135deg,#4285F4,#EA4335)', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:'18px', flexShrink:0 }}>
+              M
+            </div>
+            <div>
+              <div style={{ fontWeight:700, fontSize:'15px', color:'var(--text)' }}>Mark Davis</div>
+              <div style={{ fontSize:'12px', color:'var(--text-muted)' }}>2 reviews · 2 photos</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s=><span key={s} style={{ color:'#FBBC05', fontSize:'17px' }}>★</span>)}
+        </div>
+        <p style={{ fontSize:'14px', color:'var(--text-muted)', lineHeight:1.75, margin:0 }}>
+          I've used Joe and his crew on multiple jobs. From maintaining my irrigation system to repairing my septic system, they can do it all. They are reliable and knowledgeable in everything yard related. Give them a call. You won't be disappointed!
+        </p>
+        <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'auto' }}>51 weeks ago</div>
+      </div>
+
+      {/* Review 6 — Jeremy Hargrove */}
+      <div style={{ background:'white', border:'1px solid var(--gray-100)', borderRadius:'14px', padding:'24px', boxShadow:'0 2px 12px rgba(0,0,0,.06)', display:'flex', flexDirection:'column', gap:'14px' }}>
+        <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
+          <div style={{ display:'flex', alignItems:'center', gap:'12px' }}>
+            <div style={{ width:'44px', height:'44px', borderRadius:'50%', background:'linear-gradient(135deg,#34A853,#FBBC05)', display:'flex', alignItems:'center', justifyContent:'center', color:'white', fontWeight:700, fontSize:'18px', flexShrink:0 }}>
+              J
+            </div>
+            <div>
+              <div style={{ fontWeight:700, fontSize:'15px', color:'var(--text)' }}>Jeremy Hargrove</div>
+              <div style={{ fontSize:'12px', color:'var(--text-muted)' }}>11 reviews · 0 photos</div>
+            </div>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" style={{ flexShrink:0 }}><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        </div>
+        <div style={{ display:'flex', gap:'2px' }}>
+          {[1,2,3,4,5].map(s=><span key={s} style={{ color:'#FBBC05', fontSize:'17px' }}>★</span>)}
+        </div>
+        <p style={{ fontSize:'14px', color:'#aaa', lineHeight:1.75, margin:0, fontStyle:'italic' }}>
+          — 5 star rating
+        </p>
+        <div style={{ fontSize:'12px', color:'var(--text-muted)', marginTop:'auto' }}>6 weeks ago</div>
+      </div>
+
+    </div>
+
+    {/* Google Reviews link */}
+    
+  </div>
+</section>
+{/* ── END REVIEWS SECTION ── */}
 
       {/* CTA */}
       <section className="cta-section">
