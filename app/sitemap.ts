@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://www.sprinklersandlawns.com';
+const BASE_URL = 'https://sprinklersandlawns.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static Navigation Pages (Navbar se liye gaye)
