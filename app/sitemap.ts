@@ -1,4 +1,6 @@
 import { MetadataRoute } from 'next';
+// @ts-ignore (JS data file shared with the neighborhood pages)
+import { neighborhoods } from '../lib/carrollton-neighborhoods';
 
 const BASE_URL = 'https://sprinklersandlawns.com';
 
@@ -54,6 +56,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // 3b. Carrollton neighborhood pages (generated from lib/carrollton-neighborhoods.js)
+  const carrolltonNeighborhoodPages = neighborhoods.map((n: { slug: string }) => ({
+    url: `${BASE_URL}/service-areas/carrollton/${n.slug}`,
+    lastModified: new Date('2026-11-17'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
   // 4. (Optional) Agar database se mazeed blogs ya dynamic pages laane hon toh woh yahan fetch kar sakte hain:
   let dynamicBlogPages: MetadataRoute.Sitemap = [];
   try {
@@ -70,5 +80,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Sabhi links ko combine karke return kar dein
-  return [...staticPages, ...servicePages, ...areaPages, ...dynamicBlogPages];
+  return [...staticPages, ...servicePages, ...areaPages, ...carrolltonNeighborhoodPages, ...dynamicBlogPages];
 }
