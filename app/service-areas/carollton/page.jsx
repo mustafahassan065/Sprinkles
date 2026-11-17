@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Irrigation Services Carrollton TX | Sprinklers and Lawns',
   description: 'Professional irrigation services in Carrollton, Texas. Sprinkler repair, installation, smart controllers, and seasonal maintenance. Family-owned. License #8146. Call (972) 755-9019.',
   keywords: 'irrigation services Carrollton TX, sprinkler repair Carrollton Texas, sprinkler installation Carrollton TX, irrigation company Carrollton Texas',
-  alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/carrollton' },
+  alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/carollton' },
 };
 
 const IMG = {
@@ -121,7 +121,7 @@ export default function CarrolltonPage() {
               <ul className="check-list" style={{ marginBottom:'28px' }}>{highlights.map(h=><li key={h}>{h}</li>)}</ul>
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>Carrollton neighborhoods and areas we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
-                {neighborhoods.map(n=><Link key={n.slug} href={`/service-areas/carrollton/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>)}
+                {neighborhoods.map(n=><Link key={n.slug} href={`/service-areas/carollton/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>)}
               </div>
             </div>
           </div>

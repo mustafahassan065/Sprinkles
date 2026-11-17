@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   const { neighborhood } = await params;
   const d = getNeighborhood(neighborhood);
   if (!d) return {};
-  const url = `${SITE}/service-areas/carrollton/${d.slug}`;
+  const url = `${SITE}/service-areas/carollton/${d.slug}`;
   const title = `${d.seoTitle} | Sprinklers and Lawns`;
   return {
     title: { absolute: title },
@@ -63,7 +63,7 @@ export default async function CarrolltonNeighborhoodPage({ params }) {
   const d = getNeighborhood(neighborhood);
   if (!d) notFound();
 
-  const url = `${SITE}/service-areas/carrollton/${d.slug}`;
+  const url = `${SITE}/service-areas/carollton/${d.slug}`;
   const services = buildServices(d.display);
   const others = neighborhoods.filter((n) => n.slug !== d.slug);
 
@@ -86,7 +86,7 @@ export default async function CarrolltonNeighborhoodPage({ params }) {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
           { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${SITE}/service-areas` },
-          { '@type': 'ListItem', position: 3, name: 'Carrollton', item: `${SITE}/service-areas/carrollton` },
+          { '@type': 'ListItem', position: 3, name: 'Carrollton', item: `${SITE}/service-areas/carollton` },
           { '@type': 'ListItem', position: 4, name: d.display, item: url },
         ],
       },
@@ -107,7 +107,7 @@ export default async function CarrolltonNeighborhoodPage({ params }) {
               <span style={{ margin:'0 8px' }}>›</span>
               <Link href="/service-areas" style={{ color:'rgba(255,255,255,.5)', textDecoration:'none' }}>Service Areas</Link>
               <span style={{ margin:'0 8px' }}>›</span>
-              <Link href="/service-areas/carrollton" style={{ color:'rgba(255,255,255,.5)', textDecoration:'none' }}>Carrollton</Link>
+              <Link href="/service-areas/carollton" style={{ color:'rgba(255,255,255,.5)', textDecoration:'none' }}>Carrollton</Link>
               <span style={{ margin:'0 8px' }}>›</span>
               <span style={{ color:'rgba(255,255,255,.9)' }}>{d.display}</span>
             </nav>
@@ -185,9 +185,9 @@ export default async function CarrolltonNeighborhoodPage({ params }) {
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>Other Carrollton neighborhoods we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
                 {others.map(n => (
-                  <Link key={n.slug} href={`/service-areas/carrollton/${n.slug}`} style={pillStyle}>{n.name}</Link>
+                  <Link key={n.slug} href={`/service-areas/carollton/${n.slug}`} style={pillStyle}>{n.name}</Link>
                 ))}
-                <Link href="/service-areas/carrollton" style={pillStyle}>All of Carrollton</Link>
+                <Link href="/service-areas/carollton" style={pillStyle}>All of Carrollton</Link>
               </div>
             </div>
           </div>
