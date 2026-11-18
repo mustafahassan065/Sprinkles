@@ -145,7 +145,7 @@ export default function IrvingPage() {
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>Irving neighborhoods and areas we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
                 {neighborhoods.map(n => (
-                  <Link key={n.slug} href={`/service-areas/irving/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>
+                  <Link key={n.slug} href={`/service-areas/iriving/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>
                 ))}
               </div>
             </div>
