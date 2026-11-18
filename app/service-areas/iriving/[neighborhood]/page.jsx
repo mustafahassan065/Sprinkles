@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
   const { neighborhood } = await params;
   const d = getNeighborhood(neighborhood);
   if (!d) return {};
-  const url = `${SITE}/service-areas/irving/${d.slug}`;
+  const url = `${SITE}/service-areas/iriving/${d.slug}`;
   const title = `${d.seoTitle} | Sprinklers and Lawns`;
   return {
     title: { absolute: title },

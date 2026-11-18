@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Irrigation Services Irving TX | Sprinklers and Lawns',
   description: 'Professional irrigation services in Irving, Texas. Sprinkler repair, installation, smart controllers, and seasonal maintenance. Family-owned. License #8146. Call (972) 755-9019.',
   keywords: 'irrigation services Irving TX, sprinkler repair Irving Texas, sprinkler installation Irving TX, irrigation company Irving Texas',
-  alternates: { canonical: `${SITE}/service-areas/irving` },
+  alternates: { canonical: `${SITE}/service-areas/iriving` },
 };
 
 const HERO = '/images/serviceareas/Irving_/iriving (1).jpg';
