@@ -1,13 +1,19 @@
 import Link from 'next/link';
+import { neighborhoods } from '../../../lib/plano-neighborhoods';
+
+const SITE = 'https://sprinklersandlawns.com';
+
 export const metadata = {
   title: 'Irrigation Services Plano TX | Sprinklers and Lawns',
   description: 'Professional irrigation services in Plano, Texas. Sprinkler repair, installation, smart controllers, and seasonal maintenance. Family-owned. License #8146. Call (972) 755-9019.',
   keywords: 'irrigation services Plano TX, sprinkler repair Plano Texas, sprinkler installation Plano TX, irrigation company Plano Texas',
-  alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/plano' },
+  alternates: { canonical: `${SITE}/service-areas/plano` },
 };
+
 const HERO = '/images/serviceareas/Plano/plano (1).jpg';
 const IMG1 = '/images/serviceareas/Plano/plano (2).jpg';
 const IMG2 = '/images/serviceareas/Plano/plano (3).jpg';
+
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Plano properties. Priced by heads to ensure proper coverage.' },
@@ -18,6 +24,7 @@ const services = [
   { ic:'💧', c:'green', t:'Head Replacement',           href:'/head-replacement',           d:'Replacement of worn or damaged heads with water-efficient models and proper alignment.' },
   { ic:'📅', c:'brown', t:'Seasonal Maintenance',       href:'/seasonal-maintenance',       d:'Scheduled inspections and programming adjustments for year-round Plano performance.' },
 ];
+
 const highlights = [
   'Plano is located in Collin County and is one of the largest cities in the Dallas-Fort Worth metroplex',
   'Plano properties include a wide range of established neighborhoods with older irrigation systems requiring updates and maintenance',
@@ -25,10 +32,34 @@ const highlights = [
   'Plano enforces irrigation code compliance including rain and freeze sensors on all systems',
   'Many Plano properties have mature trees creating shade changes that affect irrigation zone requirements over time',
 ];
-const neighborhoods = ['Legacy West','Willow Bend','Hunters Creek','Gleneagles','Downtown Plano','Independence Pkwy area','Preston Rd corridor','Spring Creek area'];
+
 export default function PlanoPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${SITE}/#business`,
+        name: 'Sprinklers and Lawns',
+        url: SITE,
+        telephone: '+1-972-755-9019',
+        areaServed: { '@type': 'City', name: 'Plano, TX' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+          { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${SITE}/service-areas` },
+          { '@type': 'ListItem', position: 3, name: 'Plano', item: `${SITE}/service-areas/plano` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <section className="page-hero">
         <img src={HERO} alt="Professional irrigation services in Plano Texas — sprinkler repair, installation, and maintenance" className="hero-img" />
         <div className="hero-overlay" />
@@ -62,6 +93,7 @@ export default function PlanoPage() {
           </div>
         </div>
       </section>
+
       <section className="section bg-white">
         <div className="container">
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'72px', alignItems:'center' }}>
@@ -81,6 +113,7 @@ export default function PlanoPage() {
           </div>
         </div>
       </section>
+
       <section className="section bg-soft">
         <div className="container">
           <div style={{ textAlign:'center', marginBottom:'52px' }}>
@@ -99,6 +132,7 @@ export default function PlanoPage() {
           </div>
         </div>
       </section>
+
       <section className="section bg-white">
         <div className="container">
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'72px', alignItems:'center' }}>
@@ -111,12 +145,15 @@ export default function PlanoPage() {
               <ul className="check-list" style={{ marginBottom:'28px' }}>{highlights.map(h => <li key={h}>{h}</li>)}</ul>
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>Plano neighborhoods and areas we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
-                {neighborhoods.map(n => <span key={n} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500 }}>{n}</span>)}
+                {neighborhoods.map(n => (
+                  <Link key={n.slug} href={`/service-areas/plano/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section style={{ background:'var(--green)', padding:'52px 0' }}>
         <div className="container">
           <div className="grid-4" style={{ gap:0 }}>
@@ -129,6 +166,7 @@ export default function PlanoPage() {
           </div>
         </div>
       </section>
+
       <section className="cta-section">
         <div className="container" style={{ position:'relative', zIndex:2 }}>
           <span className="eyebrow" style={{ color:'var(--green-light)', justifyContent:'center' }}>Schedule Irrigation Service in Plano, TX</span>

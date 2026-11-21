@@ -26,6 +26,11 @@ const serviceAreas = [
   { label: 'Garland', href: '/service-areas/garland' },
   { label: 'Richardson', href: '/service-areas/richardson' },
   { label: 'Rowlett', href: '/service-areas/rowlett' },
+  { label: 'Celina',       href: '/service-areas/celina' },
+  { label: 'Melissa',      href: '/service-areas/melissa' },
+  { label: 'Anna',         href: '/service-areas/anna' },
+  { label: 'Forney',       href: '/service-areas/forney' },
+  { label: 'Princeton',    href: '/service-areas/princeton' },
 ];
 
 export default function Navbar() {

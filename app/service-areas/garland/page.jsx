@@ -1,13 +1,19 @@
 import Link from 'next/link';
+import { neighborhoods } from '../../../lib/garland-neighborhoods';
+
+const SITE = 'https://sprinklersandlawns.com';
+
 export const metadata = {
   title: 'Irrigation Services Garland TX | Sprinklers and Lawns',
   description: 'Professional irrigation services in Garland, Texas. Sprinkler repair, installation, smart controllers, and seasonal maintenance. Family-owned. License #8146. Call (972) 755-9019.',
   keywords: 'irrigation services Garland TX, sprinkler repair Garland Texas, sprinkler installation Garland TX, irrigation company Garland Texas',
-  alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/garland' },
+  alternates: { canonical: `${SITE}/service-areas/garland` },
 };
+
 const HERO = '/images/serviceareas/Garland/garland (1).jpg';
 const IMG1 = '/images/serviceareas/Garland/garland (2).jpg';
 const IMG2 = '/images/serviceareas/Garland/garland (1).jpg';
+
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },
   { ic:'⚙️', c:'green', t:'Sprinkler Installation',     href:'/sprinkler-installation',     d:'Custom-designed irrigation systems for Garland properties. Priced by heads to ensure proper coverage.' },
@@ -18,6 +24,7 @@ const services = [
   { ic:'💧', c:'green', t:'Head Replacement',           href:'/head-replacement',           d:'Replacement of worn or damaged heads with water-efficient models and proper alignment.' },
   { ic:'📅', c:'brown', t:'Seasonal Maintenance',       href:'/seasonal-maintenance',       d:'Scheduled inspections and programming adjustments for year-round Garland performance.' },
 ];
+
 const highlights = [
   'Garland is located in Dallas County and is one of the largest cities in the Dallas-Fort Worth metroplex',
   'Garland properties include many established neighborhoods with older irrigation systems requiring repair and upgrade',
@@ -26,10 +33,33 @@ const highlights = [
   'Many Garland properties have aging irrigation systems that benefit from smart controller upgrades and system assessments',
 ];
 
-const neighborhoods = ['Firewheel','Duck Creek','Lavon Drive area','Beltline Road corridor','Saturn Road area','South Garland','North Garland','Rowlett Road area'];
 export default function GarlandPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${SITE}/#business`,
+        name: 'Sprinklers and Lawns',
+        url: SITE,
+        telephone: '+1-972-755-9019',
+        areaServed: { '@type': 'City', name: 'Garland, TX' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+          { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${SITE}/service-areas` },
+          { '@type': 'ListItem', position: 3, name: 'Garland', item: `${SITE}/service-areas/garland` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <section className="page-hero">
         <img src={HERO} alt="Professional irrigation services in Garland Texas — sprinkler repair, installation, and maintenance" className="hero-img" />
         <div className="hero-overlay" />
@@ -63,6 +93,7 @@ export default function GarlandPage() {
           </div>
         </div>
       </section>
+
       <section className="section bg-white">
         <div className="container">
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'72px', alignItems:'center' }}>
@@ -81,6 +112,7 @@ export default function GarlandPage() {
           </div>
         </div>
       </section>
+
       <section className="section bg-soft">
         <div className="container">
           <div style={{ textAlign:'center', marginBottom:'52px' }}>
@@ -99,6 +131,7 @@ export default function GarlandPage() {
           </div>
         </div>
       </section>
+
       <section className="section bg-white">
         <div className="container">
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'72px', alignItems:'center' }}>
@@ -111,12 +144,15 @@ export default function GarlandPage() {
               <ul className="check-list" style={{ marginBottom:'28px' }}>{highlights.map(h => <li key={h}>{h}</li>)}</ul>
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>Garland neighborhoods and areas we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
-                {neighborhoods.map(n => <span key={n} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500 }}>{n}</span>)}
+                {neighborhoods.map(n => (
+                  <Link key={n.slug} href={`/service-areas/garland/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section style={{ background:'var(--green)', padding:'52px 0' }}>
         <div className="container">
           <div className="grid-4" style={{ gap:0 }}>
@@ -129,6 +165,7 @@ export default function GarlandPage() {
           </div>
         </div>
       </section>
+
       <section className="cta-section">
         <div className="container" style={{ position:'relative', zIndex:2 }}>
           <span className="eyebrow" style={{ color:'var(--green-light)', justifyContent:'center' }}>Schedule Irrigation Service in Garland, TX</span>

@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import { neighborhoods } from '../../../lib/mckinney-neighborhoods';
+
+const SITE = 'https://sprinklersandlawns.com';
 
 export const metadata = {
   title: 'Irrigation Services McKinney TX | Sprinklers and Lawns',
   description: 'Professional irrigation services in McKinney, Texas. Sprinkler repair, installation, smart controllers, and seasonal maintenance. Family-owned. License #8146. Call (972) 755-9019.',
   keywords: 'irrigation services McKinney TX, sprinkler repair McKinney Texas, sprinkler installation McKinney TX, irrigation company McKinney Texas',
-  alternates: { canonical: 'https://sprinklersandlawns.com/service-areas/mckinney' },
+  alternates: { canonical: `${SITE}/service-areas/mckinney` },
 };
 
 const IMG = {
@@ -32,11 +35,33 @@ const highlights = [
   'Older McKinney systems may require retrofitting with updated components and smart controller upgrades',
 ];
 
-const neighborhoods = ['Stonebridge Ranch','Craig Ranch','Tucker Hill','Adriatica','Heritage Ranch','Eldorado area','US-75 corridor','Downtown McKinney area'];
-
 export default function McKinneyPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'LocalBusiness',
+        '@id': `${SITE}/#business`,
+        name: 'Sprinklers and Lawns',
+        url: SITE,
+        telephone: '+1-972-755-9019',
+        areaServed: { '@type': 'City', name: 'McKinney, TX' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: SITE },
+          { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${SITE}/service-areas` },
+          { '@type': 'ListItem', position: 3, name: 'McKinney', item: `${SITE}/service-areas/mckinney` },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <section className="page-hero">
         <img src={IMG.hero} alt="Professional irrigation services in McKinney Texas" className="hero-img" />
         <div className="hero-overlay" />
@@ -118,10 +143,13 @@ export default function McKinneyPage() {
               <span className="eyebrow">Serving McKinney, Texas</span>
               <h2 className="section-title">Local Irrigation Knowledge for <em>McKinney Properties</em></h2>
               <div className="divider" />
-              <ul className="check-list" style={{ marginBottom:'28px' }}>{highlights.map(h=><li key={h}>{h}</li>)}</ul>
+              <p style={{ color:'var(--text-muted)', marginBottom:'20px', fontSize:'17px' }}>Sprinklers and Lawns understands the specific irrigation needs of McKinney, Texas properties:</p>
+              <ul className="check-list" style={{ marginBottom:'28px' }}>{highlights.map(h => <li key={h}>{h}</li>)}</ul>
               <h3 style={{ fontFamily:'var(--sans)', fontSize:'16px', fontWeight:600, color:'var(--text)', marginBottom:'12px' }}>McKinney neighborhoods and areas we serve:</h3>
               <div style={{ display:'flex', flexWrap:'wrap', gap:'8px' }}>
-                {neighborhoods.map(n=><span key={n} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500 }}>{n}</span>)}
+                {neighborhoods.map(n => (
+                  <Link key={n.slug} href={`/service-areas/mckinney/${n.slug}`} style={{ background:'var(--green-xlight)', color:'var(--green-dark)', border:'1px solid var(--green-light)', padding:'5px 12px', borderRadius:'20px', fontSize:'13px', fontWeight:500, textDecoration:'none' }}>{n.name}</Link>
+                ))}
               </div>
             </div>
           </div>
