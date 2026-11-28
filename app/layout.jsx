@@ -26,29 +26,20 @@ export const metadata = {
     siteName: 'Sprinklers and Lawns',
     images: [
       {
-        url: '/images/SprinklesLogo.webp',
+        url: '/images/SprinklesLogo.png',
         width: 1200,
         height: 630,
         alt: 'Sprinklers and Lawns',
       },
     ],
   },
+  // ✅ Browser tab + Google Search favicon (PNG)
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/images/SprinklesLogo.png', type: 'image/png', sizes: '192x192' },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
-  verification: {
-    // agar Google Search Console verification meta tag hai to yahan daalein
-    // google: 'your-verification-code',
-  },
-  other: {
-    'msapplication-TileColor': '#0a5c36',
+    shortcut: '/images/SprinklesLogo.png',
+    apple: '/images/SprinklesLogo.png',
   },
 };
 
@@ -57,8 +48,8 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'Sprinklers and Lawns',
   url: 'https://sprinklersandlawns.com',
-  logo: 'https://sprinklersandlawns.com/images/SprinklesLogo.webp',
-  image: 'https://sprinklersandlawns.com/images/SprinklesLogo.webp',
+  logo: 'https://sprinklersandlawns.com/images/SprinklesLogo.png',
+  image: 'https://sprinklersandlawns.com/images/SprinklesLogo.png',
   description:
     'Family-owned irrigation company serving Dallas, Plano, McKinney, Frisco, Allen, and surrounding North Texas communities.',
   telephone: '+1-972-755-9019',
@@ -68,15 +59,7 @@ const organizationSchema = {
     addressRegion: 'TX',
     addressCountry: 'US',
   },
-  areaServed: [
-    'Dallas',
-    'Plano',
-    'McKinney',
-    'Frisco',
-    'Allen',
-    'North Texas',
-  ],
-  sameAs: [],
+  areaServed: ['Dallas', 'Plano', 'McKinney', 'Frisco', 'Allen', 'North Texas'],
 };
 
 export default function RootLayout({ children }) {
@@ -88,6 +71,16 @@ export default function RootLayout({ children }) {
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        {/* ✅ Fallback favicon link for browser tab */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="/images/SprinklesLogo.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/SprinklesLogo.png"
         />
         <script
           type="application/ld+json"
