@@ -9,9 +9,9 @@ export const metadata = {
   alternates: { canonical: `${SITE}/service-areas/anna` },
 };
 
-const HERO = '/images/serviceareas/flowermound/flowermound (2).jpg';
-const IMG1 = '/images/serviceareas/Garland/garland (2).jpg';
-const IMG2 = '/images/serviceareas/Plano/plano (3).jpg';
+const HERO = '/images/serviceareas/anna.jpg';
+const IMG1 = '/images/serviceareas/anna.jpg';
+const IMG2 = '/images/serviceareas/anna.jpg';
 
 const services = [
   { ic:'🔧', c:'green', t:'Sprinkler Repair',           href:'/sprinkler-repair',           d:'Quick diagnosis and reliable repair of broken heads, damaged valves, wiring issues, pipe breaks, and leaks.' },

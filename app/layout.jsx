@@ -34,20 +34,65 @@ export const metadata = {
     ],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
+  manifest: '/site.webmanifest',
+  verification: {
+    // agar Google Search Console verification meta tag hai to yahan daalein
+    // google: 'your-verification-code',
+  },
+  other: {
+    'msapplication-TileColor': '#0a5c36',
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Sprinklers and Lawns',
+  url: 'https://sprinklersandlawns.com',
+  logo: 'https://sprinklersandlawns.com/images/SprinklesLogo.webp',
+  image: 'https://sprinklersandlawns.com/images/SprinklesLogo.webp',
+  description:
+    'Family-owned irrigation company serving Dallas, Plano, McKinney, Frisco, Allen, and surrounding North Texas communities.',
+  telephone: '+1-972-755-9019',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Plano',
+    addressRegion: 'TX',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    'Dallas',
+    'Plano',
+    'McKinney',
+    'Frisco',
+    'Allen',
+    'North Texas',
+  ],
+  sameAs: [],
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="icon" type="image/webp" href="/images/SprinklesLogo.webp" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body>
         <Navbar />
